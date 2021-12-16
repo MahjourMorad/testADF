@@ -1,0 +1,30 @@
+{
+	"name": "outputmth3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureEmployeeOutput",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Methode 3 ( Important Fields Only)"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": " @{item().DepartementName}",
+					"type": "Expression"
+				},
+				"container": "mth3output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

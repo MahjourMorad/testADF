@@ -1,0 +1,53 @@
+{
+	"name": "Departement",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Employee2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Departement Folder"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FirstName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastName",
+				"type": "varchar"
+			},
+			{
+				"name": "FullName",
+				"type": "varchar"
+			},
+			{
+				"name": "Genre",
+				"type": "varchar"
+			},
+			{
+				"name": "Age",
+				"type": "varchar"
+			},
+			{
+				"name": "Filenamee",
+				"type": "varchar"
+			},
+			{
+				"name": "DepartementName",
+				"type": "varchar"
+			},
+			{
+				"name": "deppartement",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DepartCible"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

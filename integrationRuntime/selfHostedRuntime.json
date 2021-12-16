@@ -1,0 +1,6 @@
+{
+	"name": "selfHostedRuntime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

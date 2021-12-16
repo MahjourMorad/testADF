@@ -1,0 +1,755 @@
+{
+	"name": "getApi2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['product']['nutriments']['calcium']"
+								},
+								"sink": {
+									"name": "calcium"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['calcium_100g']"
+								},
+								"sink": {
+									"name": "calcium_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['calcium_serving']"
+								},
+								"sink": {
+									"name": "calcium_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['calcium_unit']"
+								},
+								"sink": {
+									"name": "calcium_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['calcium_value']"
+								},
+								"sink": {
+									"name": "calcium_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['carbohydrates']"
+								},
+								"sink": {
+									"name": "carbohydrates"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['carbohydrates_100g']"
+								},
+								"sink": {
+									"name": "carbohydrates_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['carbohydrates_serving']"
+								},
+								"sink": {
+									"name": "carbohydrates_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['carbohydrates_unit']"
+								},
+								"sink": {
+									"name": "carbohydrates_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['carbohydrates_value']"
+								},
+								"sink": {
+									"name": "carbohydrates_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['cholesterol']"
+								},
+								"sink": {
+									"name": "cholesterol"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['cholesterol_100g']"
+								},
+								"sink": {
+									"name": "cholesterol_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['cholesterol_serving']"
+								},
+								"sink": {
+									"name": "cholesterol_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['cholesterol_unit']"
+								},
+								"sink": {
+									"name": "cholesterol_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['cholesterol_value']"
+								},
+								"sink": {
+									"name": "cholesterol_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy']"
+								},
+								"sink": {
+									"name": "product_nutriments_energy"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy-kcal']"
+								},
+								"sink": {
+									"name": "energy-kcal"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy-kcal_100g']"
+								},
+								"sink": {
+									"name": "energy-kcal_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy-kcal_serving']"
+								},
+								"sink": {
+									"name": "energy-kcal_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy-kcal_unit']"
+								},
+								"sink": {
+									"name": "energy-kcal_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy-kcal_value']"
+								},
+								"sink": {
+									"name": "energy-kcal_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy_100g']"
+								},
+								"sink": {
+									"name": "energy_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy_serving']"
+								},
+								"sink": {
+									"name": "energy_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy_unit']"
+								},
+								"sink": {
+									"name": "energy_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['energy_value']"
+								},
+								"sink": {
+									"name": "product_nutriments_energy_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fat']"
+								},
+								"sink": {
+									"name": "product_nutriments_fat"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fat_100g']"
+								},
+								"sink": {
+									"name": "fat_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fat_serving']"
+								},
+								"sink": {
+									"name": "fat_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fat_unit']"
+								},
+								"sink": {
+									"name": "fat_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fat_value']"
+								},
+								"sink": {
+									"name": "fat_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fiber']"
+								},
+								"sink": {
+									"name": "product_nutriments_fiber"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fiber_100g']"
+								},
+								"sink": {
+									"name": "fiber_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fiber_serving']"
+								},
+								"sink": {
+									"name": "fiber_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fiber_unit']"
+								},
+								"sink": {
+									"name": "fiber_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fiber_value']"
+								},
+								"sink": {
+									"name": "product_nutriments_fiber_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['fruits-vegetables-nuts-estimate-from-ingredients_100g']"
+								},
+								"sink": {
+									"name": "fruits-vegetables-nuts-estimate-from-ingredients_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['iron']"
+								},
+								"sink": {
+									"name": "iron"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['iron_100g']"
+								},
+								"sink": {
+									"name": "iron_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['iron_serving']"
+								},
+								"sink": {
+									"name": "iron_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['iron_unit']"
+								},
+								"sink": {
+									"name": "iron_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['iron_value']"
+								},
+								"sink": {
+									"name": "iron_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['nova-group']"
+								},
+								"sink": {
+									"name": "nova-group"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['nova-group_100g']"
+								},
+								"sink": {
+									"name": "nova-group_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['nova-group_serving']"
+								},
+								"sink": {
+									"name": "nova-group_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['nutrition-score-fr']"
+								},
+								"sink": {
+									"name": "nutrition-score-fr"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['nutrition-score-fr_100g']"
+								},
+								"sink": {
+									"name": "nutrition-score-fr_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['proteins']"
+								},
+								"sink": {
+									"name": "product_nutriments_proteins"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['proteins_100g']"
+								},
+								"sink": {
+									"name": "proteins_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['proteins_serving']"
+								},
+								"sink": {
+									"name": "proteins_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['proteins_unit']"
+								},
+								"sink": {
+									"name": "proteins_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['proteins_value']"
+								},
+								"sink": {
+									"name": "product_nutriments_proteins_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['salt']"
+								},
+								"sink": {
+									"name": "product_nutriments_salt"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['salt_100g']"
+								},
+								"sink": {
+									"name": "salt_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['salt_serving']"
+								},
+								"sink": {
+									"name": "salt_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['salt_unit']"
+								},
+								"sink": {
+									"name": "salt_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['salt_value']"
+								},
+								"sink": {
+									"name": "salt_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['saturated-fat']"
+								},
+								"sink": {
+									"name": "product_nutriments_saturated-fat"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['saturated-fat_100g']"
+								},
+								"sink": {
+									"name": "saturated-fat_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['saturated-fat_serving']"
+								},
+								"sink": {
+									"name": "saturated-fat_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['saturated-fat_unit']"
+								},
+								"sink": {
+									"name": "saturated-fat_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['saturated-fat_value']"
+								},
+								"sink": {
+									"name": "saturated-fat_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sodium']"
+								},
+								"sink": {
+									"name": "product_nutriments_sodium"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sodium_100g']"
+								},
+								"sink": {
+									"name": "sodium_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sodium_serving']"
+								},
+								"sink": {
+									"name": "sodium_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sodium_unit']"
+								},
+								"sink": {
+									"name": "sodium_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sodium_value']"
+								},
+								"sink": {
+									"name": "product_nutriments_sodium_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sugars']"
+								},
+								"sink": {
+									"name": "product_nutriments_sugars"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sugars_100g']"
+								},
+								"sink": {
+									"name": "sugars_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sugars_serving']"
+								},
+								"sink": {
+									"name": "sugars_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sugars_unit']"
+								},
+								"sink": {
+									"name": "sugars_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['sugars_value']"
+								},
+								"sink": {
+									"name": "product_nutriments_sugars_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['trans-fat']"
+								},
+								"sink": {
+									"name": "trans-fat"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['trans-fat_100g']"
+								},
+								"sink": {
+									"name": "trans-fat_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['trans-fat_serving']"
+								},
+								"sink": {
+									"name": "trans-fat_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['trans-fat_unit']"
+								},
+								"sink": {
+									"name": "trans-fat_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['trans-fat_value']"
+								},
+								"sink": {
+									"name": "trans-fat_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-a']"
+								},
+								"sink": {
+									"name": "vitamin-a"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-a_100g']"
+								},
+								"sink": {
+									"name": "vitamin-a_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-a_serving']"
+								},
+								"sink": {
+									"name": "vitamin-a_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-a_unit']"
+								},
+								"sink": {
+									"name": "vitamin-a_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-a_value']"
+								},
+								"sink": {
+									"name": "vitamin-a_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-c']"
+								},
+								"sink": {
+									"name": "vitamin-c"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-c_100g']"
+								},
+								"sink": {
+									"name": "vitamin-c_100g"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-c_serving']"
+								},
+								"sink": {
+									"name": "vitamin-c_serving"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-c_unit']"
+								},
+								"sink": {
+									"name": "vitamin-c_unit"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product']['nutriments']['vitamin-c_value']"
+								},
+								"sink": {
+									"name": "vitamin-c_value"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "RestResource2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "OutputApiEmployee",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "API Pipeline"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-12-16T13:40:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

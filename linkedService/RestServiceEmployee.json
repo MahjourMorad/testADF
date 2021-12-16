@@ -1,0 +1,13 @@
+{
+	"name": "RestServiceEmployee",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://world.openfoodfacts.org/api/v0/product/737628064502.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

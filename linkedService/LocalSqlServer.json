@@ -1,0 +1,17 @@
+{
+	"name": "LocalSqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=LMA003233\\SQLEXPRESS;initial catalog=AdventureWorksDW2019",
+			"userName": "CORP\\mmahjour",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwN2VlMGNmNi01YjFiLTRiODctOTE4ZC04YmY1ZmQwZmFlZDgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfHostedRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

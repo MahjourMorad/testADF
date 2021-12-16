@@ -1,0 +1,16 @@
+{
+	"name": "RestResource2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestServiceEmployee",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "API dataset"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

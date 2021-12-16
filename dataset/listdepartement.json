@@ -1,0 +1,30 @@
+{
+	"name": "listdepartement",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Employee2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Departement Folder"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "depatement",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "listedepatement"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,45 @@
+{
+	"name": "CibleShort",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Employee2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Methode 3 ( Important Fields Only)"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FirstName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastName",
+				"type": "varchar"
+			},
+			{
+				"name": "FullName",
+				"type": "varchar"
+			},
+			{
+				"name": "Genre",
+				"type": "varchar"
+			},
+			{
+				"name": "Age",
+				"type": "varchar"
+			},
+			{
+				"name": "Filenamee",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cibleshort"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

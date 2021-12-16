@@ -1,0 +1,32 @@
+{
+	"name": "csvto Sql_copy2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "testout",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CibleFinal",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "source(output(\n\t\tEmployeeKey as string,\n\t\tParentEmployeeKey as string,\n\t\tEmployeeNationalIDAlternateKey as string,\n\t\tParentEmployeeNationalIDAlternateKey as string,\n\t\tSalesTerritoryKey as string,\n\t\tFirstName as string,\n\t\tLastName as string,\n\t\tMiddleName as string,\n\t\tNameStyle as string,\n\t\tTitle as string,\n\t\tHireDate as string,\n\t\tBirthDate as string,\n\t\tLoginID as string,\n\t\tEmailAddress as string,\n\t\tPhone as string,\n\t\tMaritalStatus as string,\n\t\tEmergencyContactName as string,\n\t\tEmergencyContactPhone as string,\n\t\tSalariedFlag as string,\n\t\tGender as string,\n\t\tPayFrequency as string,\n\t\tBaseRate as string,\n\t\tVacationHours as string,\n\t\tSickLeaveHours as string,\n\t\tCurrentFlag as string,\n\t\tSalesPersonFlag as string,\n\t\tDepartmentName as string,\n\t\tStartDate as string,\n\t\tEndDate as string,\n\t\tStatus as string,\n\t\tabrevation as string,\n\t\tsignification as string,\n\t\tfullname as string,\n\t\tAge as string,\n\t\tEmployeePhotoConverted as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource1 derive(employeekeyInt = toInteger(EmployeeKey),\n\t\tparentemployeeint = toInteger(ParentEmployeeKey),\n\t\tsalariedflagbit = toBoolean(SalariedFlag),\n\t\tbirthdateConv = toTimestamp(BirthDate),\n\t\tHireDateConv = toTimestamp(HireDate),\n\t\tBaseRateConv = toFloat(BaseRate),\n\t\tSickLeaveHoursconv = toInteger(SickLeaveHours),\n\t\tpayFreqConv = toInteger(PayFrequency),\n\t\tvacancyhoursConv = toInteger(VacationHours),\n\t\tstartdateconv = toTimestamp(StartDate),\n\t\tendateconv = toTimestamp(EndDate),\n\t\tsalesFlagConv = toBoolean(SalesPersonFlag),\n\t\tcurrentflagconv = toBoolean(CurrentFlag),\n\t\tfilename = \"filename\") ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tEmployeeKey as integer,\n\t\tParentEmployeeKey as integer,\n\t\tEmployeeNationalIDAlternateKey as string,\n\t\tParentEmployeeNationalIDAlternateKey as string,\n\t\tSalesTerritoryKey as integer,\n\t\tFirstName as string,\n\t\tLastName as string,\n\t\tMiddleName as string,\n\t\tNameStyle as boolean,\n\t\tTitle as string,\n\t\tHireDate as date,\n\t\tBirthDate as date,\n\t\tLoginID as string,\n\t\tEmailAddress as string,\n\t\tPhone as string,\n\t\tMaritalStatus as string,\n\t\tEmergencyContactName as string,\n\t\tEmergencyContactPhone as string,\n\t\tSalariedFlag as boolean,\n\t\tGender as string,\n\t\tPayFrequency as integer,\n\t\tBaseRate as decimal(19,4),\n\t\tVacationHours as integer,\n\t\tSickLeaveHours as integer,\n\t\tCurrentFlag as boolean,\n\t\tSalesPersonFlag as boolean,\n\t\tDepartmentName as string,\n\t\tStartDate as date,\n\t\tEndDate as date,\n\t\tStatus as string,\n\t\tfilenamee as string\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\trecreate:true,\n\tformat: 'table',\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tEmployeeKey = employeekeyInt,\n\t\tParentEmployeeKey = parentemployeeint,\n\t\tEmployeeNationalIDAlternateKey,\n\t\tParentEmployeeNationalIDAlternateKey,\n\t\tSalesTerritoryKey = payFreqConv,\n\t\tFirstName,\n\t\tLastName,\n\t\tMiddleName,\n\t\tNameStyle = salariedflagbit,\n\t\tTitle,\n\t\tHireDate = HireDateConv,\n\t\tBirthDate = birthdateConv,\n\t\tLoginID,\n\t\tEmailAddress,\n\t\tPhone,\n\t\tMaritalStatus,\n\t\tEmergencyContactName,\n\t\tEmergencyContactPhone,\n\t\tSalariedFlag = salariedflagbit,\n\t\tGender,\n\t\tPayFrequency = payFreqConv,\n\t\tBaseRate = BaseRateConv,\n\t\tVacationHours = vacancyhoursConv,\n\t\tSickLeaveHours = SickLeaveHoursconv,\n\t\tCurrentFlag = currentflagconv,\n\t\tSalesPersonFlag = salesFlagConv,\n\t\tDepartmentName,\n\t\tStartDate = startdateconv,\n\t\tEndDate = endateconv,\n\t\tStatus,\n\t\tfilename\n\t)) ~> sink1"
+		}
+	}
+}
